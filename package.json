@@ -4,16 +4,35 @@
   "description": "A collection of utilities that I find myself writing all the time at work.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benjamin-wss/cornerstone-js-utilities.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/benjamin-wss/cornerstone-js-utilities/issues"
   },
-  "homepage": "https://github.com/benjamin-wss/cornerstone-js-utilities#readme"
+  "homepage": "https://github.com/benjamin-wss/cornerstone-js-utilities#readme",
+  "dependencies": {
+    "moment": "^2.29.3",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "^2.6.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
 }
