@@ -1,0 +1,19 @@
+{
+  "name": "@benjamin-wss/cornerstone-js-utilities",
+  "version": "1.0.0",
+  "description": "A collection of utilities that I find myself writing all the time at work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjamin-wss/cornerstone-js-utilities.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjamin-wss/cornerstone-js-utilities/issues"
+  },
+  "homepage": "https://github.com/benjamin-wss/cornerstone-js-utilities#readme"
+}
