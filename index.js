@@ -1,5 +1,5 @@
-const environmentVariables = require("./lib/environment-varaibles");
+const EnvironmentVariables = require("./lib/environment-variables");
 
 module.exports = {
-  environmentVariables,
+  EnvironmentVariables,
 };
