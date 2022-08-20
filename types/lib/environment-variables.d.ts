@@ -10,11 +10,22 @@ export function getEnvVariableAsString({ fieldName, defaultValue }: {
     fieldName: string;
     defaultValue?: string;
 }): string;
+/**
+ * Gets environment variable as integer.
+ *
+ * If no default value is provided and no value is provided, an error will be thrown.
+ * If default value and/or value passed in is not an integer, an error will be thrown.
+ * @param {object} param0 Input parameters.
+ * @param {string} param0.fieldName Environment variable field name.
+ * @param {number} [param0.defaultValue] Environment variable field default value.
+ * @param {number} [param0.minValue=0] Environment variable field default value.
+ * @returns {number}
+ */
 export function getEnvVariableAsInteger({ fieldName, defaultValue, minValue }: {
-    fieldName: any;
-    defaultValue: any;
+    fieldName: string;
+    defaultValue?: number;
     minValue?: number;
-}): any;
+}): number;
 export function getEnvVariableAsBoolean({ fieldName, defaultValue }: {
     fieldName: any;
     defaultValue?: boolean;
