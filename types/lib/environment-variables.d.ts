@@ -34,12 +34,12 @@ export function getEnvVariableAsInteger({ fieldName, defaultValue, minValue }: {
  * @param {object} param0 Input parameters.
  * @param {string} param0.fieldName Environment variable field name.
  * @param {number} [param0.defaultValue] Environment variable field default value.
- * @returns {number}
+ * @returns {boolean}
  */
 export function getEnvVariableAsBoolean({ fieldName, defaultValue }: {
     fieldName: string;
     defaultValue?: number;
-}): number;
+}): boolean;
 /**
  * Gets environment variable as decimal.
  * If default value is provided but no value is provided, default value is used.
@@ -56,9 +56,20 @@ export function getEnvVariableAsDecimal({ fieldName, defaultValue, minValue }: {
     defaultValue?: number;
     minValue?: number;
 }): number;
+/**
+ * Gets environment variable as date string.
+ * If default value is provided but no value is provided, default value is used.
+ * If no default value is provided and no value is provided, an error will be thrown.
+ * If default value and/or value passed in is not a date string, an error will be thrown.
+ * @param {object} param0 Input parameters.
+ * @param {string} param0.fieldName Environment variable field name.
+ * @param {string} [param0.defaultValue] Environment variable field default value.
+ * @param {string} [param0.dateFormatMask="YYYY-MM-DD"] Date string format mask. Uses moment datetime string mash.
+ * @returns {string}
+ */
 export function getEnvVariableAsDateString({ fieldName, defaultValue, dateFormatMask, }: {
-    fieldName: any;
-    defaultValue: any;
+    fieldName: string;
+    defaultValue?: string;
     dateFormatMask?: string;
-}): any;
+}): string;
 //# sourceMappingURL=environment-variables.d.ts.map
