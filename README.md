@@ -74,5 +74,6 @@ The `DB_CONNECTION_STRING` section of the error message will be different depend
 
 # TODO
 
-- [ ] Write `jsdoc` for functions.
-- [ ] Write documentation on functions for the `EnvironmentVariables` group of utilities.
+- [x] Write `jsdoc` for functions.
+- [x] Write documentation on functions for the `EnvironmentVariables` group of utilities.
+- [ ] Complete unit test suite.
