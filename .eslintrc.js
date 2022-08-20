@@ -3,9 +3,10 @@ module.exports = {
     browser: true,
     commonjs: true,
     es2021: true,
+    jest: true,
   },
   extends: ["airbnb-base", "plugin:prettier/recommended"],
-  plugins: ["prettier"],
+  plugins: ["prettier", "jest"],
   parserOptions: {
     ecmaVersion: "latest",
   },
