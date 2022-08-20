@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "prepare": "husky install",
-    "build": "tsc"
+    "build:types": "tsc"
   },
   "repository": {
     "type": "git",
