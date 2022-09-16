@@ -4,11 +4,13 @@
  * @param {object} param0 Input parameters.
  * @param {string} param0.fieldName Environment variable field name.
  * @param {string} [param0.defaultValue] Environment variable field default value.
+ * @param {string[]} [param0.allowedValues] Allowed string values to be applied.
  * @returns {string}
  */
-export function getEnvVariableAsString({ fieldName, defaultValue }: {
+export function getEnvVariableAsString({ fieldName, defaultValue, allowedValues, }: {
     fieldName: string;
     defaultValue?: string;
+    allowedValues?: string[];
 }): string;
 /**
  * Gets environment variable as integer.
