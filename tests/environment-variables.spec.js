@@ -1,3 +1,4 @@
+const crypto = require("crypto");
 const { EnvironmentVariables } = require("../index");
 
 describe("EnvironmentVariables", () => {
@@ -100,6 +101,66 @@ describe("EnvironmentVariables", () => {
           ","
         )}].`
       );
+    });
+  });
+
+  describe("getEnvironmentVariableAsStringArray", () => {
+    test("If default value is supplied and no value configured, return default value", () => {
+      const fieldName = crypto.randomUUID();
+      const defaultValue = ["foo", "bar"];
+
+      const result = EnvironmentVariables.getEnvironmentVariableAsStringArray({
+        fieldName,
+        defaultValue,
+      });
+
+      expect(result.length).toBe(2);
+      expect(result[0]).toBe(defaultValue[0]);
+      expect(result[1]).toBe(defaultValue[1]);
+    });
+    test("If a string supplied with no delimiter, an array with a single value will be returned", () => {
+      const fieldName = "ENV_VAR_STRING_OVERRIDE_TEST";
+      const value = process.env[fieldName];
+      // const delimiter = ','
+      // const valuesTrimmed = value.split(delimiter).map(x => x.trim());
+
+      const result = EnvironmentVariables.getEnvironmentVariableAsStringArray({
+        fieldName,
+      });
+
+      expect(result.length).toBe(1);
+      expect(result[0]).toBe(value);
+    });
+    test("If a comma delimitted string is configured in environment variables, it should return correct array with trimmed values.", () => {
+      const fieldName = "ARRAY_TEST_WHITE_SPACES";
+      const value = process.env[fieldName];
+      const delimiter = ",";
+      const valuesTrimmed = value.split(delimiter).map((x) => x.trim());
+
+      const result = EnvironmentVariables.getEnvironmentVariableAsStringArray({
+        fieldName,
+        defaultValue: ["this should not be returned"],
+      });
+
+      expect(result.length).toBe(2);
+      expect(result[0]).toBe(valuesTrimmed[0]);
+      expect(result[1]).toBe(valuesTrimmed[1]);
+    });
+    test("If a custom delimitted string is configured in environment variables, it should return correct array with trimmed values.", () => {
+      const fieldName = "ARRAY_TEST_WHITE_SPACES_PIPE_DELIMITER";
+      const value = process.env[fieldName];
+      const delimiter = "|";
+      const valuesTrimmed = value.split(delimiter).map((x) => x.trim());
+
+      const result = EnvironmentVariables.getEnvironmentVariableAsStringArray({
+        fieldName,
+        defaultValue: ["this should not be returned"],
+        delimiter,
+      });
+
+      expect(result.length).toBe(2);
+      expect(result[0]).toBe(valuesTrimmed[0]);
+      expect(result[1]).toBe(valuesTrimmed[1]);
     });
   });
 });
