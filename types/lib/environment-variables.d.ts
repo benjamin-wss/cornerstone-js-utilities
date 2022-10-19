@@ -74,4 +74,19 @@ export function getEnvVariableAsDateString({ fieldName, defaultValue, dateFormat
     defaultValue?: string;
     dateFormatMask?: string;
 }): string;
+/**
+ * Gets environment variable as string array.
+ * Supply values as delimited strings in the environment variable. The delimiter can be specified in the delimiter argument.
+ * If no default value is provided and no value is provided, an error will be thrown.
+ * @param {object} param0 Input parameters.
+ * @param {string} param0.fieldName Environment variable field name.
+ * @param {string[]} [param0.defaultValue] Environment variable field default value.
+ * @param {string} [param0.delimiter=','] Environment variable field default value.
+ * @returns {string[]} Returns a string array. Each element within the array will have leading and trailing white spaces trimmed.
+ */
+export function getEnvironmentVariableAsStringArray({ fieldName, defaultValue, delimiter, }: {
+    fieldName: string;
+    defaultValue?: string[];
+    delimiter?: string;
+}): string[];
 //# sourceMappingURL=environment-variables.d.ts.map
