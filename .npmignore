@@ -1,3 +1,6 @@
 .idea
 .husky
 .eslintcache
+.gitattributes
+.editorconfig
+.gitattributes
