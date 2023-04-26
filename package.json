@@ -1,6 +1,6 @@
 {
   "name": "@benjamin-wss/cornerstone-js-utilities",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A collection of utilities that I find myself writing all the time at work.",
   "main": "index.js",
   "types": "types/index.d.ts",
